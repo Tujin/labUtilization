@@ -1,0 +1,348 @@
+﻿Version     0.0
+Platform    uLCD-43PT-L
+PlatRes     272x480
+Depends
+end
+Options
+    Genie
+    Speed                        115200
+    Checksum                     No
+    ResponseSize                 2
+    Multidrop                    No
+    Destination                  1
+    SndBuf                       0
+end
+Form
+    Name                         Form0
+    Bgtype                       Color
+    Color                        BLACK
+    Image                        (None)
+    Source.Height                0
+    Source.Left                  0
+    Source.Top                   0
+    Source.Width                 0
+    OnActivate                   ''
+    OnCreate                     ''
+    OnRepeat                     ''
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+Keyboard
+    Name                         Keyboard0
+    AutoCapsDisplay              Yes
+    Fill                         (Default)
+    Font.Color                   BLACK
+    Font.Effects                 []
+    Font.Name                    Tahoma
+    Font.Size                    8
+    Font.Style                   []
+    Height                       137
+    HighlightCaps                BLACK
+    KeyboardType                 KB1
+    KeyDistance                  0
+    Left                         0
+    SmallFont.Color              BLACK
+    SmallFont.Effects            []
+    SmallFont.Name               Tahoma
+    SmallFont.Size               7
+    SmallFont.Style              []
+    Top                          135
+    Visible                      Yes
+    Width                        480
+    OnChanged                    'Report Message'
+end
+StaticText
+    Name                         Statictext0
+    AutoSize                     Yes
+    Caption                      'Please Enter WWID'
+    Color                        BLACK
+    Font.Color                   WHITE
+    Font.Effects                 []
+    Font.Name                    Tahoma
+    Font.Size                    22
+    Font.Style                   []
+    Height                       35
+    Left                         0
+    Top                          0
+    Transparent                  Yes
+    Visible                      Yes
+    Width                        249
+    WordWrap                     No
+end
+Strings
+    Name                         Strings0
+    Alignment                    Center
+    BGcolor                      WHITE
+    Height                       65
+    FGcolor                      0xC57100
+    Font.Bold                    No
+    Font.CharSet                 ANSI
+    Font.Italic                  No
+    Font.Name                    'Intel Clear'
+    Font.Opaque                  Yes
+    Font.Size                    56
+    Font.Strikethrough           No
+    Font.Underline               No
+    Left                         4
+    Strings                      ''
+    StringsStyle                 Message
+    Top                          48
+    Visible                      Yes
+    Width                        355
+    OnChanged                    ''
+end
+UserButton
+    Name                         Userbutton1
+    Height                       67
+    Images                       ''
+    Left                         369
+    Matrix                       -1
+    Momentary                    Yes
+    Stretch                      No
+    Top                          48
+    Width                        103
+    OnChanged                    Form1Activate
+end
+Form
+    Name                         Form1
+    Bgtype                       Color
+    Color                        BLACK
+    Image                        (None)
+    Source.Height                0
+    Source.Left                  0
+    Source.Top                   0
+    Source.Width                 0
+    OnActivate                   ''
+    OnCreate                     ''
+    OnRepeat                     ''
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+Strings
+    Name                         Strings1
+    Alignment                    Center
+    BGcolor                      WHITE
+    Height                       40
+    FGcolor                      0xC57100
+    Font.Bold                    No
+    Font.CharSet                 ANSI
+    Font.Italic                  No
+    Font.Name                    'Intel Clear'
+    Font.Opaque                  Yes
+    Font.Size                    30
+    Font.Strikethrough           No
+    Font.Underline               No
+    Left                         40
+    Strings                      11412302
+    StringsStyle                 Message
+    Top                          20
+    Visible                      Yes
+    Width                        170
+    OnChanged                    ''
+end
+Strings
+    Name                         Strings3
+    Alignment                    Left
+    BGcolor                      WHITE
+    Height                       40
+    FGcolor                      0xC57100
+    Font.Bold                    No
+    Font.CharSet                 ANSI
+    Font.Italic                  No
+    Font.Name                    'Intel Clear'
+    Font.Opaque                  Yes
+    Font.Size                    30
+    Font.Strikethrough           No
+    Font.Underline               No
+    Left                         256
+    Strings                      '4/27/2015 19:58\n'
+    StringsStyle                 Message
+    Top                          20
+    Visible                      Yes
+    Width                        170
+    OnChanged                    ''
+end
+Strings
+    Name                         Strings2
+    Alignment                    Center
+    BGcolor                      WHITE
+    Height                       107
+    FGcolor                      0xC57100
+    Font.Bold                    No
+    Font.CharSet                 ANSI
+    Font.Italic                  No
+    Font.Name                    'Intel Clear'
+    Font.Opaque                  Yes
+    Font.Size                    34
+    Font.Strikethrough           No
+    Font.Underline               No
+    Left                         40
+    Strings                      'Adhoc Training\nProficiency Training\nOther\n'
+    StringsStyle                 Message
+    Top                          88
+    Visible                      Yes
+    Width                        107
+    OnChanged                    ''
+end
+Strings
+    Name                         Strings4
+    Alignment                    Center
+    BGcolor                      WHITE
+    Height                       107
+    FGcolor                      0xC57100
+    Font.Bold                    No
+    Font.CharSet                 ANSI
+    Font.Italic                  No
+    Font.Name                    'Intel Clear'
+    Font.Opaque                  Yes
+    Font.Size                    72
+    Font.Strikethrough           No
+    Font.Underline               No
+    Left                         184
+    Strings                      1\n2\n3\n4\n5\n6\n7\n8\n
+    StringsStyle                 Message
+    Top                          88
+    Visible                      Yes
+    Width                        107
+    OnChanged                    ''
+end
+Strings
+    Name                         Strings5
+    Alignment                    Center
+    BGcolor                      WHITE
+    Height                       107
+    FGcolor                      0xC57100
+    Font.Bold                    No
+    Font.CharSet                 ANSI
+    Font.Italic                  No
+    Font.Name                    'Intel Clear'
+    Font.Opaque                  Yes
+    Font.Size                    72
+    Font.Strikethrough           No
+    Font.Underline               No
+    Left                         324
+    Strings                      1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11+\n
+    StringsStyle                 Message
+    Top                          88
+    Visible                      Yes
+    Width                        107
+    OnChanged                    ''
+end
+StaticText
+    Name                         Statictext1
+    AutoSize                     Yes
+    Caption                      'Session Type'
+    Color                        BLACK
+    Font.Color                   WHITE
+    Font.Effects                 []
+    Font.Name                    Tahoma
+    Font.Size                    14
+    Font.Style                   []
+    Height                       23
+    Left                         40
+    Top                          64
+    Transparent                  Yes
+    Visible                      Yes
+    Width                        109
+    WordWrap                     No
+end
+StaticText
+    Name                         Statictext2
+    AutoSize                     Yes
+    Caption                      'Duration (hrs)'
+    Color                        BLACK
+    Font.Color                   WHITE
+    Font.Effects                 []
+    Font.Name                    Tahoma
+    Font.Size                    14
+    Font.Style                   []
+    Height                       23
+    Left                         184
+    Top                          64
+    Transparent                  Yes
+    Visible                      Yes
+    Width                        118
+    WordWrap                     No
+end
+StaticText
+    Name                         Statictext3
+    AutoSize                     Yes
+    Caption                      '# of Students'
+    Color                        BLACK
+    Font.Color                   WHITE
+    Font.Effects                 []
+    Font.Name                    Tahoma
+    Font.Size                    14
+    Font.Style                   []
+    Height                       23
+    Left                         324
+    Top                          64
+    Transparent                  Yes
+    Visible                      Yes
+    Width                        116
+    WordWrap                     No
+end
+Strings
+    Name                         Strings6
+    Alignment                    Center
+    BGcolor                      WHITE
+    Height                       39
+    FGcolor                      0xC57100
+    Font.Bold                    No
+    Font.CharSet                 ANSI
+    Font.Italic                  No
+    Font.Name                    'Intel Clear'
+    Font.Opaque                  Yes
+    Font.Size                    34
+    Font.Strikethrough           No
+    Font.Underline               No
+    Left                         40
+    Strings                      CSB\nPLM\nCAT\nCAR\nDNS\nTAB\nFastener\nOther\n
+    StringsStyle                 Message
+    Top                          224
+    Visible                      Yes
+    Width                        250
+    OnChanged                    ''
+end
+StaticText
+    Name                         Statictext4
+    AutoSize                     Yes
+    Caption                      'Tool Set'
+    Color                        BLACK
+    Font.Color                   WHITE
+    Font.Effects                 []
+    Font.Name                    Tahoma
+    Font.Size                    14
+    Font.Style                   []
+    Height                       23
+    Left                         40
+    Top                          200
+    Transparent                  Yes
+    Visible                      Yes
+    Width                        68
+    WordWrap                     No
+end
+Strings
+    Name                         Strings7
+    Alignment                    Center
+    BGcolor                      WHITE
+    Height                       39
+    FGcolor                      0xC57100
+    Font.Bold                    No
+    Font.CharSet                 ANSI
+    Font.Italic                  No
+    Font.Name                    'Intel Clear'
+    Font.Opaque                  Yes
+    Font.Size                    34
+    Font.Strikethrough           No
+    Font.Underline               No
+    Left                         320
+    Strings                      Submit\n
+    StringsStyle                 Message
+    Top                          224
+    Visible                      Yes
+    Width                        107
+    OnChanged                    ''
+end
