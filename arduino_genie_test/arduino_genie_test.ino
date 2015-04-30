@@ -1,8 +1,13 @@
 #include <genieArduino.h>
 
+#define BACKSPACE 110
+#define CANCEL 107
+#define SUBMIT 13
+#define WWID_SIZE 8
+
 Genie genie;
 
-char wwid[9];
+char wwid[WWID_SIZE + 1]; // declare a char array to hold our WWID, add one for null terminator
 int wwidIndex;
 
 void setup()
@@ -33,13 +38,20 @@ void keyPress(int key)
 {
   Serial.print("Keypress received: ");
   Serial.println(key);
-  if(key == 110 && wwidIndex > 0) // keystroke received is a backspace, and we have digits to delete
+  if(key == BACKSPACE && wwidIndex > 0) // keystroke received is a backspace, and we have digits to delete
   {
     wwid[wwidIndex] = 0; //Set current location in char array to 0 (null terminator)
     wwidIndex--; // back up index
   }
-  else if (key == 107) // pressed cancel, set index to 0 to erase their entire entry
+  else if (key == CANCEL) // pressed cancel, set index to 0 to erase their entire entry
     wwidIndex = 0;
+  else if(key == SUBMIT && wwidIndex == WWID_SIZE) // pressed submit,wwid is filled out, move to form 1
+  {
+   genie.WriteObject (GENIE_OBJ_FORM, 1, 0); // Switch to form 1
+   wwid[wwidIndex] = 0; // create null terminator
+   genie.WriteStr(1,wwid); // write string to strings objecton form 1
+   return;
+  }
   int digit = key - '0'; // get actual numerical value of keypress
   if(digit >= 0 && digit <= 9 && wwidIndex < 8) // keypress is within the acceptable range and we have room in our char array for it
   {
