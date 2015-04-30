@@ -2,7 +2,7 @@
 ==============================================================
 4DGL Compiler 2.7.1.0 -- Copyright 2004-2012 4D Labs
 ** C:\Users\tlulery\Documents\git\labUsageTracker\labUsageTracker.4DWork\labUsageTracker.4DGenieS
-compiled Mon Apr 27 21:04:35 2015
+compiled Wed Apr 29 16:02:02 2015
 
 ==============================================================
 ==============================================================
@@ -10,84 +10,84 @@ compiled Mon Apr 27 21:04:35 2015
 
 No Ref for file
 [LINKING]
-function 14, main, address 759
+function 14, main, address 705
 (main entry point)
 stack usage 112 + 4
 function 'main' requires no arguments
 function 'main' has no return value
 
 [LINKING]
-function 13, DoGFXObjects, address 2799
+function 13, DoGFXObjects, address 2745
 stack usage 0 + 4
 !Empty Function
 [LINKING]
-function 12, UpdateObjects, address 2800
+function 12, UpdateObjects, address 2746
 stack usage 4 + 4
 function 'UpdateObjects' requires 1 argument
 function 'UpdateObjects' has no return value
 
 [LINKING]
-function 11, ActivateForm, address 3437
+function 11, ActivateForm, address 3383
 stack usage 6 + 4
 function 'ActivateForm' requires 1 argument
 function 'ActivateForm' has no return value
 
 [LINKING]
-function 10, TurnOffButtons, address 3764
+function 10, TurnOffButtons, address 3710
 stack usage 6 + 4
 function 'TurnOffButtons' requires 1 argument
 function 'TurnOffButtons' has no return value
 
 [LINKING]
-function 9, WriteObject, address 3900
+function 9, WriteObject, address 3846
 stack usage 8 + 4
 function 'WriteObject' requires 3 argument
 function 'WriteObject' has no return value
 
 [LINKING]
-function 8, ReadObject, address 4193
+function 8, ReadObject, address 4139
 stack usage 6 + 4
 function 'ReadObject' requires 2 argument
 function 'ReadObject' has no return value
 
 [LINKING]
-function 7, seroutOcs, address 4376
+function 7, seroutOcs, address 4322
 stack usage 0 + 4
 function 'seroutOcs' requires no arguments
 function 'seroutOcs' has no return value
 
 [LINKING]
-function 6, seroutCS, address 4391
+function 6, seroutCS, address 4337
 stack usage 0 + 4
 function 'seroutCS' requires 1 argument
 function 'seroutCS' has no return value
 
 [LINKING]
-function 5, kbUp, address 4409
+function 5, kbUp, address 4355
 stack usage 0 + 4
 function 'kbUp' requires 2 argument
 function 'kbUp' has no return value
 
 [LINKING]
-function 4, setkeystate, address 4551
+function 4, setkeystate, address 4497
 stack usage 0 + 4
 function 'setkeystate' requires 2 argument
 function 'setkeystate' has no return value
 
 [LINKING]
-function 3, kbDown, address 4576
+function 3, kbDown, address 4522
 stack usage 2 + 4
 function 'kbDown' requires 4 argument
 function 'kbDown' has no return value
 
 [LINKING]
-function 2, refreshstate, address 5115
+function 2, refreshstate, address 5061
 stack usage 2 + 4
 function 'refreshstate' requires 2 argument
 function 'refreshstate' has no return value
 
 [LINKING]
-function 1, PrintStrings, address 5317
+function 1, PrintStrings, address 5263
 stack usage 14 + 4
 function 'PrintStrings' requires 3 argument
 function 'PrintStrings' has no return value
@@ -182,7 +182,6 @@ iStatictext1                      00000010         16  (usage 3)
 iStatictext2                      00000011         17  (usage 3)
 iStatictext3                      00000012         18  (usage 3)
 iStatictext4                      00000013         19  (usage 3)
-iUserbutton0                      00000014         20  (usage 3)
 iUserbutton1                      0000000F         15  (usage 3)
 KbButtons                         0000000A         10  (usage 12)
 KbCaps                            00000004          4  (usage 12)
@@ -203,12 +202,12 @@ KbState                           00000002          2  (usage 63)
 LANDSCAPE                         00000000          0  (usage 3)
 MaxTotObjects                     00000021         33  (usage 6)
 NAK                               00000015         21  (usage 24)
-nInputs                           00000005          5  (usage 3)
+nInputs                           00000003          3  (usage 3)
 OFF                               00000000          0  (usage 3)
 ON                                00000001          1  (usage 3)
 OT_ACTIVATE                       00000067        103  (usage 6)
 OT_NEXTFRAME                      00000068        104  (usage 3)
-OT_NEXTSTRING                     0000006A        106  (usage 6)
+OT_NEXTSTRING                     0000006A        106  (usage 3)
 OT_PREVFRAME                      00000069        105  (usage 3)
 OT_PREVSTRING                     0000006B        107  (usage 3)
 OT_REPORT                         00000064        100  (usage 6)
@@ -292,7 +291,7 @@ tTank                             0000001A         26  (usage 3)
 tThermometer                      00000012         18  (usage 3)
 tTimer                            00000017         23  (usage 6)
 tTrackbar                         00000005          5  (usage 3)
-tUserButton                       00000021         33  (usage 21)
+tUserButton                       00000021         33  (usage 18)
 tUserImages                       0000001B         27  (usage 3)
 tUserled                          00000013         19  (usage 3)
 tVideo                            00000014         20  (usage 3)
@@ -347,19 +346,19 @@ uadd_3232                         FFFFFEDE        -290  args=3 r=1  (usage 3)
 umul_1616                         FFFFFEDF        -289  args=3 r=1  (usage 3)
 
 [USER FUNCTIONS]
-ActivateForm                      00000D6D  args=1 r=0  (usage 9)
-DoGFXObjects                      00000AEF  args=0 r=0  (usage 6)
-kbDown                            000011E0  args=4 r=0  (usage 3)
-kbUp                              00001139  args=2 r=0  (usage 3)
-PrintStrings                      000014C5  args=3 r=0  (usage 9)
-ReadObject                        00001061  args=2 r=0  (usage 3)
-refreshstate                      000013FB  args=2 r=0  (usage 9)
-seroutCS                          00001127  args=1 r=0  (usage 45)
-seroutOcs                         00001118  args=0 r=0  (usage 9)
-setkeystate                       000011C7  args=2 r=0  (usage 33)
-TurnOffButtons                    00000EB4  args=1 r=0  (usage 6)
-UpdateObjects                     00000AF0  args=1 r=0  (usage 3)
-WriteObject                       00000F3C  args=3 r=0  (usage 24)
+ActivateForm                      00000D37  args=1 r=0  (usage 9)
+DoGFXObjects                      00000AB9  args=0 r=0  (usage 6)
+kbDown                            000011AA  args=4 r=0  (usage 3)
+kbUp                              00001103  args=2 r=0  (usage 3)
+PrintStrings                      0000148F  args=3 r=0  (usage 9)
+ReadObject                        0000102B  args=2 r=0  (usage 3)
+refreshstate                      000013C5  args=2 r=0  (usage 9)
+seroutCS                          000010F1  args=1 r=0  (usage 45)
+seroutOcs                         000010E2  args=0 r=0  (usage 9)
+setkeystate                       00001191  args=2 r=0  (usage 33)
+TurnOffButtons                    00000E7E  args=1 r=0  (usage 6)
+UpdateObjects                     00000ABA  args=1 r=0  (usage 3)
+WriteObject                       00000F06  args=3 r=0  (usage 24)
 
 [GLOBAL VARIABLES]
 actKB                                 33  word       (usage 33)
@@ -388,50 +387,47 @@ y                                     70  word       (usage 9)
 [DATA]
 0007: 37 38 39 6B 34 35 36 31 32 33 0D 30 6E FF FF 00     789k456123.0nˇˇ.
 0017: 00 00 00 00 00 00 00 FF 00 FF 00 FF 00 FF 00 FF     .......ˇ.ˇ.ˇ.ˇ.ˇ
-0027: 00 0D 00 00 00 00 00 10 00 10 00 15 00 00 00 FF     ...............ˇ
+0027: 00 0D 00 00 00 00 00 10 00 10 00 14 00 00 00 FF     ...............ˇ
 0037: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF     ˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇ
-0047: FF FF FF FF FF FF FF FF FF FF FF 16 00 FF FF FF     ˇˇˇˇˇˇˇˇˇˇˇ..ˇˇˇ
-0057: FF FF FF FF FF 42 00 64 00 00 00 00 00 00 00 00     ˇˇˇˇˇB.d........
-0067: 00 00 00 00 00 00 00 00 00 00 00 00 00 21 00 01     .............!..
-0077: 00 FF FF FF FF FF FF FF FF FF FF FF FF 00 00 2C     .ˇˇˇˇˇˇˇˇˇˇˇˇ..,
-0087: 00 04 00 67 00 0A 00 01 00 00 00 12 00 00 00 00     ...g............
-0097: 00 00 00 00 00 00 00 00 00 21 00 01 00 FF FF FF     .........!...ˇˇˇ
-00A7: FF FF FF FF FF FF FF FF FF 00 00 58 00 02 00 6A     ˇˇˇˇˇˇˇˇˇ..X...j
-00B7: 00 11 00 05 00 0A 00 12 00 00 00 00 00 00 00 00     ................
-00C7: 00 00 00 00 00 00 00 00 00 01 00 04 00 30 00 66     .............0.f
-00D7: 01 70 00 98 03 FF FF 00 00 01 00 01 00 00 00 00     .p.ò.ˇˇ.........
-00E7: 00 00 02 10 00 28 00 14 00 D1 00 3B 00 98 03 FF     .....(...—.;.ò.ˇ
-00F7: FF 00 00 01 00 01 00 01 00 00 00 00 06 1D 00 28     ˇ..............(
-0107: 00 58 00 92 00 C2 00 98 03 FF FF 00 00 01 00 01     .X.í.¬.ò.ˇˇ.....
-0117: 00 01 00 00 00 00 04 10 00 00 01 14 00 A9 01 3B     .............©.;
-0127: 00 98 03 FF FF 00 00 01 00 01 00 01 00 00 00 00     .ò.ˇˇ...........
-0137: 08 04 00 B8 00 58 00 22 01 C2 00 98 03 FF FF 00     ...∏.X.".¬.ò.ˇˇ.
-0147: 00 01 00 01 00 01 00 00 00 00 0A 08 00 44 01 58     .............D.X
-0157: 00 AE 01 C2 00 98 03 FF FF 00 00 01 00 01 00 01     .Æ.¬.ò.ˇˇ.......
-0167: 00 00 00 00 0C 15 00 28 00 E0 00 21 01 06 01 98     .......(.‡.!...ò
-0177: 03 FF FF 00 00 01 00 01 00 01 00 00 00 00 0E 09     .ˇˇ.............
-0187: 00 40 01 E0 00 AA 01 06 01 98 03 FF FF 00 00 01     .@.‡.™...ò.ˇˇ...
-0197: 00 01 00 01 00 00 00 00 00 00 00 00 00 00 00 00     ................
-01A7: 00 00 00 00 00 00 00 00 00 02 00 FF FF FF FF 00     ...........ˇˇˇˇ.
-01B7: 00 00 00 01 00 00 00 00 00 00 00 00 00 08 00 CC     ...............Ã
-01C7: 80 E6 80 00 81 1A 81 34 81 4E 81 68 81 82 81 00     ÄÊÄ.Å.Å4ÅNÅhÅÇÅ.
-01D7: 00 00 00 00 00 05 00 0E 00 10 00 11 00 12 00 13     ................
-01E7: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00     ................
-01F7: 00 02 00 14 00 0F 00 00 00 00 00 00 00 00 00 00     ................
-0207: 00 07 80 00 00 00 00 00 00 00 00 00 00 00 00 00     ..Ä.............
-0217: 00 00 00 4D 6F 75 6E 74 69 6E 67 2E 2E 2E 0A 00     ...Mounting.....
-0227: 44 72 69 76 65 20 6E 6F 74 20 6D 6F 75 6E 74 65     Drive not mounte
-0237: 64 2E 2E 2E 00 4C 41 42 55 53 41 7E 31 2E 64 61     d....LABUSA~1.da
-0247: 74 00 4C 41 42 55 53 41 7E 31 2E 67 63 69 00 4C     t.LABUSA~1.gci.L
-0257: 41 42 55 53 41 7E 31 2E 64 61 31 00 4C 41 42 55     ABUSA~1.da1.LABU
-0267: 53 41 7E 31 2E 67 63 31 00 4C 41 42 55 53 41 7E     SA~1.gc1.LABUSA~
-0277: 31 2E 64 61 32 00 4C 41 42 55 53 41 7E 31 2E 67     1.da2.LABUSA~1.g
-0287: 63 32 00 4C 41 42 55 53 41 7E 31 2E 64 61 34 00     c2.LABUSA~1.da4.
-0297: 4C 41 42 55 53 41 7E 31 2E 67 63 34 00 4C 41 42     LABUSA~1.gc4.LAB
-02A7: 55 53 41 7E 31 2E 64 61 35 00 4C 41 42 55 53 41     USA~1.da5.LABUSA
-02B7: 7E 31 2E 67 63 35 00 4C 41 42 55 53 41 7E 31 2E     ~1.gc5.LABUSA~1.
-02C7: 74 78 66 00 2D 0A 2D 0A 2D 0A 2D 0A 2D 0A 2D 0A     txf.-.-.-.-.-.-.
-02D7: 3E 0A 2D 0A EE 0A EE 0A 2D 0A 90 0F A8 0F           >.-.Ó.Ó.-.ê.®.
+0047: FF FF FF FF FF FF FF FF FF FF FF 16 00 64 00 00     ˇˇˇˇˇˇˇˇˇˇˇ..d..
+0057: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00     ................
+0067: 00 00 00 21 00 01 00 FF FF FF FF FF FF FF FF FF     ...!...ˇˇˇˇˇˇˇˇˇ
+0077: FF FF FF 00 00 2C 00 04 00 67 00 0A 00 01 00 00     ˇˇˇ..,...g......
+0087: 00 12 00 00 00 00 00 00 00 00 00 00 00 00 00 00     ................
+0097: 00 00 00 01 00 04 00 30 00 66 01 70 00 98 03 FF     .......0.f.p.ò.ˇ
+00A7: FF 00 00 01 00 01 00 00 00 00 00 00 02 10 00 28     ˇ..............(
+00B7: 00 14 00 D1 00 3B 00 98 03 FF FF 00 00 01 00 01     ...—.;.ò.ˇˇ.....
+00C7: 00 01 00 00 00 00 06 1D 00 28 00 58 00 92 00 C2     .........(.X.í.¬
+00D7: 00 98 03 FF FF 00 00 01 00 01 00 01 00 00 00 00     .ò.ˇˇ...........
+00E7: 04 10 00 00 01 14 00 A9 01 3B 00 98 03 FF FF 00     .......©.;.ò.ˇˇ.
+00F7: 00 01 00 01 00 01 00 00 00 00 08 04 00 B8 00 58     .............∏.X
+0107: 00 22 01 C2 00 98 03 FF FF 00 00 01 00 01 00 01     .".¬.ò.ˇˇ.......
+0117: 00 00 00 00 0A 08 00 44 01 58 00 AE 01 C2 00 98     .......D.X.Æ.¬.ò
+0127: 03 FF FF 00 00 01 00 01 00 01 00 00 00 00 0C 15     .ˇˇ.............
+0137: 00 28 00 E0 00 21 01 06 01 98 03 FF FF 00 00 01     .(.‡.!...ò.ˇˇ...
+0147: 00 01 00 01 00 00 00 00 0E 09 00 40 01 E0 00 AA     ...........@.‡.™
+0157: 01 06 01 98 03 FF FF 00 00 01 00 01 00 01 00 00     ...ò.ˇˇ.........
+0167: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00     ................
+0177: 00 00 00 02 00 FF FF FF FF 00 00 00 00 01 00 00     .....ˇˇˇˇ.......
+0187: 00 00 00 00 00 00 00 08 00 96 80 B0 80 CA 80 E4     .........ñÄ∞Ä Ä‰
+0197: 80 FE 80 18 81 32 81 4C 81 00 00 00 00 00 00 05     Ä˛Ä.Å2ÅLÅ.......
+01A7: 00 0E 00 10 00 11 00 12 00 13 00 00 00 00 00 00     ................
+01B7: 00 00 00 00 00 00 00 00 00 00 00 02 00 FF FF 0F     .............ˇˇ.
+01C7: 00 00 00 00 00 00 00 00 00 00 00 07 80 00 00 00     ............Ä...
+01D7: 00 00 00 00 00 00 00 00 00 00 00 00 00 4D 6F 75     .............Mou
+01E7: 6E 74 69 6E 67 2E 2E 2E 0A 00 44 72 69 76 65 20     nting.....Drive 
+01F7: 6E 6F 74 20 6D 6F 75 6E 74 65 64 2E 2E 2E 00 4C     not mounted....L
+0207: 41 42 55 53 41 7E 31 2E 64 61 74 00 4C 41 42 55     ABUSA~1.dat.LABU
+0217: 53 41 7E 31 2E 67 63 69 00 4C 41 42 55 53 41 7E     SA~1.gci.LABUSA~
+0227: 31 2E 64 61 31 00 4C 41 42 55 53 41 7E 31 2E 67     1.da1.LABUSA~1.g
+0237: 63 31 00 4C 41 42 55 53 41 7E 31 2E 64 61 32 00     c1.LABUSA~1.da2.
+0247: 4C 41 42 55 53 41 7E 31 2E 67 63 32 00 4C 41 42     LABUSA~1.gc2.LAB
+0257: 55 53 41 7E 31 2E 64 61 34 00 4C 41 42 55 53 41     USA~1.da4.LABUSA
+0267: 7E 31 2E 67 63 34 00 4C 41 42 55 53 41 7E 31 2E     ~1.gc4.LABUSA~1.
+0277: 64 61 35 00 4C 41 42 55 53 41 7E 31 2E 67 63 35     da5.LABUSA~1.gc5
+0287: 00 4C 41 42 55 53 41 7E 31 2E 74 78 66 00 F7 09     .LABUSA~1.txf.˜.
+0297: F7 09 F7 09 F7 09 F7 09 F7 09 08 0A F7 09 B8 0A     ˜.˜.˜.˜.˜...˜.∏.
+02A7: B8 0A F7 09 5A 0F 72 0F                             ∏.˜.Z.r.
 
 [__MAXPROG]
 14400
@@ -441,7 +437,7 @@ y                                     70  word       (usage 9)
 [PROGRAM]
 main
 [CODESIZE]
-5791
+5737
 [MEMSIZE]
 196
 [ARGCOUNT]

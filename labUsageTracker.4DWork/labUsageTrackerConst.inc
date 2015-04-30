@@ -1,4 +1,4 @@
-// File generated 4/27/2015 9:04:27 PM
+// File generated 4/29/2015 4:01:52 PM
 // Warning! This is a generated file, any manual changes will be
 // lost during the next generation.
 
@@ -45,7 +45,6 @@
     iStatictext2    // offset 0x6C600
     iStatictext3    // offset 0x6DC00
     iStatictext4    // offset 0x6F200
-    iUserbutton0    // offset 0x70000
 #END
 
 #constant  Strings0StartH   0x0

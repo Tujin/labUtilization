@@ -1,6 +1,6 @@
 #platform "uLCD-43PT"
 
-// generated 4/27/2015 9:04:31 PM
+// generated 4/29/2015 4:01:55 PM
 
 #MODE RUNFLASH
 
@@ -116,8 +116,8 @@
     REPORT_OBJ      5
     REPORT_EVENT    7
 // End P1.inc
-    nObjects        21
-    nInputs         5
+    nObjects        20
+    nInputs         3
     ANITIMERS       0
 #END
 
@@ -243,13 +243,11 @@ endfunc
 
 #DATA
     word formstidx 0, 16
-    word formenidx 16, 21
-    word IPControls 0, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 22, -1, -1, -1, -1, 66
+    word formenidx 16, 20
+    word IPControls 0, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 22
     word IPData OT_REPORT, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                 tUserButton, 1, -1, -1, -1, -1, -1, -1, 0, 44, 4,
-                OT_ACTIVATE, 10, 1, 0, 18, 0, 0, 0, 0, 0, 0,
-                tUserButton, 1, -1, -1, -1, -1, -1, -1, 0, 88, 2,
-                OT_NEXTSTRING, 17, 5, 10, 18, 0, 0, 0, 0, 0, 0
+                OT_ACTIVATE, 10, 1, 0, 18, 0, 0, 0, 0, 0, 0
     word iStrings0  Strings0StartH, Strings0StartL, Strings0Size, 4, 48, 358, 112, 0x0398, WHITE, 0, 1, 1, 0 
     word iStrings1  Strings1StartH, Strings1StartL, Strings1Size, 40, 20, 209, 59, 0x0398, WHITE, 0, 1, 1, 1 
     word iStrings2  Strings2StartH, Strings2StartL, Strings2Size, 40, 88, 146, 194, 0x0398, WHITE, 0, 1, 1, 1 
@@ -288,7 +286,7 @@ endfunc
     word o4Dbuttons 0
     word oAniButtons 0
     word oColorPickers 0
-    word oUserButtons 2, iUserbutton0, iUserbutton1
+    word oUserButtons 2, -1, iUserbutton1
     word oTimers 0
     word oSoundss 0
     word oPinOutputs 0
