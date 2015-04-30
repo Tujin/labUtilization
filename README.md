@@ -4,7 +4,10 @@
 Contains code needed to use the 4D Systems touchscreen interface with Galileo to create a device for capturing lab utilization data.
 
 ## Requirements: 
-Requires ViSi Genie Arduino Library located [here](https://github.com/4dsystems/ViSi-Genie-Arduino-Library)
+1. ViSi Genie Arduino Library located [here](https://github.com/4dsystems/ViSi-Genie-Arduino-Library)
+2. Intel Galileo (Tested on Gen 1)
+3. 4D Systems Touchpanel (Tested on 43pt)
+4. 4D Systems Arduino Shield (Could connect wires directly to Galileo without this)
 
 
 
