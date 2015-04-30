@@ -89,20 +89,8 @@ Strings
     StringsStyle                 Message
     Top                          48
     Visible                      Yes
-    Width                        355
+    Width                        476
     OnChanged                    ''
-end
-UserButton
-    Name                         Userbutton1
-    Height                       67
-    Images                       ''
-    Left                         369
-    Matrix                       -1
-    Momentary                    Yes
-    Stretch                      No
-    Top                          48
-    Width                        103
-    OnChanged                    Form1Activate
 end
 Form
     Name                         Form1
@@ -179,7 +167,7 @@ Strings
     Font.Strikethrough           No
     Font.Underline               No
     Left                         40
-    Strings                      'Adhoc Training\nProficiency Training\nOther\n'
+    Strings                      'Adhoc Training\nProficiency Training\nOther'
     StringsStyle                 Message
     Top                          88
     Visible                      Yes

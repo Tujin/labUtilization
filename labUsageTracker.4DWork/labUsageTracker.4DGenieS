@@ -1,6 +1,6 @@
 #platform "uLCD-43PT"
 
-// generated 4/29/2015 4:01:55 PM
+// generated 4/29/2015 6:51:14 PM
 
 #MODE RUNFLASH
 
@@ -116,8 +116,8 @@
     REPORT_OBJ      5
     REPORT_EVENT    7
 // End P1.inc
-    nObjects        20
-    nInputs         3
+    nObjects        19
+    nInputs         1
     ANITIMERS       0
 #END
 
@@ -242,13 +242,11 @@ func kbUp(var iKB, var oKB)
 endfunc
 
 #DATA
-    word formstidx 0, 16
-    word formenidx 16, 20
-    word IPControls 0, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 22
-    word IPData OT_REPORT, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                tUserButton, 1, -1, -1, -1, -1, -1, -1, 0, 44, 4,
-                OT_ACTIVATE, 10, 1, 0, 18, 0, 0, 0, 0, 0, 0
-    word iStrings0  Strings0StartH, Strings0StartL, Strings0Size, 4, 48, 358, 112, 0x0398, WHITE, 0, 1, 1, 0 
+    word formstidx 0, 15
+    word formenidx 15, 19
+    word IPControls 0
+    word IPData OT_REPORT, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    word iStrings0  Strings0StartH, Strings0StartL, Strings0Size, 4, 48, 479, 112, 0x0398, WHITE, 0, 1, 1, 0 
     word iStrings1  Strings1StartH, Strings1StartL, Strings1Size, 40, 20, 209, 59, 0x0398, WHITE, 0, 1, 1, 1 
     word iStrings2  Strings2StartH, Strings2StartL, Strings2Size, 40, 88, 146, 194, 0x0398, WHITE, 0, 1, 1, 1 
     word iStrings3  Strings3StartH, Strings3StartL, Strings3Size, 256, 20, 425, 59, 0x0398, WHITE, 0, 1, 1, 1 
@@ -286,7 +284,7 @@ endfunc
     word o4Dbuttons 0
     word oAniButtons 0
     word oColorPickers 0
-    word oUserButtons 2, -1, iUserbutton1
+    word oUserButtons 0
     word oTimers 0
     word oSoundss 0
     word oPinOutputs 0
@@ -331,8 +329,6 @@ func ReadObject(var ObjectType, var ObjectIdx)
         k := stringsCV[ObjectIdx];
         else
         k := img_GetWord(hndl, *j, IMAGE_INDEX);
-        if (((ObjectType == tWinButton) || (ObjectType == tAniButton) || (ObjectType == tUserButton) || (ObjectType == t4Dbutton)) && (k)) k := 1 ; // this is not correct for blocked buttons and cannot be fixed as we cannot 
-                                                                                                                                                    // determine if button is momentary or not which is needed for correct answer.
     endif
     seroutCS(k >> 8) ; // first 8 bits
     seroutCS(k) ;
@@ -348,27 +344,6 @@ func WriteObject(var ObjectType, var ObjectIdx, var NewVal)
     else
         Objects := *(oObjects+ObjectType)+ObjectIdx*2+2 ;
         i := *(Objects) ;
-        switch (ObjectType)
-            case tUserButton :
-                j := IPControls[oUserButtons[ObjectIdx+1]] ;
-                break ;
-            default : j := -1 ;
-        endswitch
-        if (j != -1) 
-            k := img_GetWord(hndl, i , IMAGE_INDEX) ;
-            NewVal := NewVal << 1 ;  
-            if (OVF())      // button group index change
-                if (*(j+IPData+IPD_P1))   
-                    k &= 1 ;    // mask off old group index for momentary
-                else
-                    k &= 3 ;    // mask off old group index for toggle
-                endif
-            else            // normal set
-                if (*(j+IPData+IPD_P2) != -1) TurnOffButtons(*(j+IPData+IPD_P2)) ;
-                k &= 0xfffc ;    // retain only group index for state set
-            endif
-            NewVal |= k ;
-        endif
          if (ObjectType == tStrings)
             PrintStrings(ObjectIdx, NewVal, 0);
         else
@@ -378,20 +353,6 @@ func WriteObject(var ObjectType, var ObjectIdx, var NewVal)
     endif
 endfunc
 
-func TurnOffButtons(var group)
-    var j, k, l;
-    for (j := 0; j < nInputs; j++)
-        k := j*IPDatasize ;
-        if (*(IPData+k+IPD_P2) == group)
-            l := -1 ;
-             if (*(IPData+k) == tUserButton)
-                l := oUserButtons[*(IPData+k+IPD_OBJVidx)/2] ;
-                img_SetWord(hndl, l, IMAGE_INDEX, img_GetWord(hndl, l, IMAGE_INDEX) & 0xfffc );
-                img_Show(hndl, l);      // only shows on current form
-            endif
-        endif
-    next
-endfunc
 
 
 
@@ -441,17 +402,7 @@ func UpdateObjects(var newval)
     if ( ( img_GetWord(hndl, *(object), IMAGE_INDEX) != newval) || (TState == IPD_RELEASE) ) // only bother if values changed, or release
 
         img_SetWord(hndl, *(object), IMAGE_INDEX, newval);
-// temp for **User??       if ((inputtype != tUserButton) || (!*(input+IPD_P1)))
             img_Show(hndl, *(object));      // only shows on current form
-//        endif
-        if ((inputtype == t4Dbutton) || (inputtype == tUserButton) || (inputtype == tWinButton)) 
-            if (*(input+IPD_P1))
-                newval &= 1;
-            else
-                newval &= 3;
-            endif
-            if (newval > 1) newval := 1;
-        endif
         IPidx := *(input+TState) ;
         while(IPidx != 0)
             otherOBJ := IPidx + IPData;
@@ -761,38 +712,8 @@ cTrackbar:
 
 c4DButton:
 cUserButton:
-    object := oUserButtons + *(input+IPD_OBJVidx) ;
-    goto gbutton ;
 cWinbutton:
 gbutton:
-    i := img_GetWord(hndl, *(object), IMAGE_INDEX) ; // current state
-    if (*(input+IPD_P1))                                 // momentary, reports 0, but should report 1
-        if (state == TOUCH_RELEASED)
-            i &= 0xfffe ;
-            TState == IPD_DOWN ;
-        else
-            i |= 1 ;
-            TState == IPD_RELEASE ;
-        endif
-    else if (*(input+IPD_P2) == -1)                      // Toggle, reports 0+2, but should report 0+1
-        if (state == TOUCH_RELEASED)                     // only truly change on release
-            if ((i & 3) == 3)
-                i &= 0xfffc ;
-            else
-                i++ ;
-            endif
-        else
-            i |= 1 ;                                      // make down regardless of current state
-        endif
-    else                        // group action, up all other buttons on touch press, reports 0 for button down
-        if (state == TOUCH_PRESSED)                     // only truly change on release
-            TurnOffButtons(*(input+IPD_P2)) ;
-        endif
-        i := (i & 0xfffc) | 2 ;
-    endif
-
-    UpdateObjects(i) ;
-endsub ;
 
 cAniButton:
 

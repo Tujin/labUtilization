@@ -1,4 +1,4 @@
-// File generated 4/29/2015 4:01:52 PM
+// File generated 4/29/2015 6:51:12 PM
 // Warning! This is a generated file, any manual changes will be
 // lost during the next generation.
 
@@ -40,11 +40,10 @@
     iKeyboard0_11   // offset 0x54200
     iKeyboard0_12   // offset 0x5C000
     iStatictext0    // offset 0x60000
-    iUserbutton1    // offset 0x64600
-    iStatictext1    // offset 0x6B200
-    iStatictext2    // offset 0x6C600
-    iStatictext3    // offset 0x6DC00
-    iStatictext4    // offset 0x6F200
+    iStatictext1    // offset 0x64600
+    iStatictext2    // offset 0x65A00
+    iStatictext3    // offset 0x67000
+    iStatictext4    // offset 0x68600
 #END
 
 #constant  Strings0StartH   0x0

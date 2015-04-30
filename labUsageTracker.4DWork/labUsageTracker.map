@@ -1,14 +1,13 @@
-linked : 14    main 02AF
-linked : 13    DoGFXObjects 0AB9
-linked : 12    UpdateObjects 0ABA
-linked : 11    ActivateForm 0D37
-linked : 10    TurnOffButtons 0E7E
-linked : 9     WriteObject 0F06
-linked : 8     ReadObject 102B
-linked : 7     seroutOcs 10E2
-linked : 6     seroutCS 10F1
-linked : 5     kbUp 1103
-linked : 4     setkeystate 1191
-linked : 3     kbDown 11AA
-linked : 2     refreshstate 13C5
-linked : 1     PrintStrings 148F
+linked : 13    main 025D
+linked : 12    DoGFXObjects 09A6
+skipped: 11    UpdateObjects ----
+linked : 10    ActivateForm 09A7
+linked : 9     WriteObject 0AEE
+linked : 8     ReadObject 0B54
+linked : 7     seroutOcs 0BD5
+linked : 6     seroutCS 0BE4
+linked : 5     kbUp 0BF6
+linked : 4     setkeystate 0C84
+linked : 3     kbDown 0C9D
+linked : 2     refreshstate 0EB8
+linked : 1     PrintStrings 0F82
