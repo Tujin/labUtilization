@@ -1,23 +1,17 @@
-// File generated 4/29/2015 6:51:12 PM
+// File generated 5/11/2015 3:57:31 PM
 // Warning! This is a generated file, any manual changes will be
 // lost during the next generation.
 
 #constant  Strings0Count    0
 #constant  Strings0Size     1
-#constant  Strings1Count    1
-#constant  Strings1Size     16
-#constant  Strings3Count    1
-#constant  Strings3Size     16
-#constant  Strings2Count    3
-#constant  Strings2Size     29
-#constant  Strings4Count    8
-#constant  Strings4Size     4
-#constant  Strings5Count    11
-#constant  Strings5Size     8
-#constant  Strings6Count    8
-#constant  Strings6Size     21
-#constant  Strings7Count    1
-#constant  Strings7Size     9
+#constant  Strings8Count    0
+#constant  Strings8Size     1
+#constant  Strings9Count    8
+#constant  Strings9Size     10
+#constant  Strings1Count    0
+#constant  Strings1Size     1
+#constant  Strings2Count    0
+#constant  Strings2Size     1
 #DATA
     byte iKeyboard0keystrokes 0x37, 0x38, 0x39, 0x6B, 0x34, 0x35, 0x36, 0x31, 0x32, 0x33, 0x0D, 0x30, 0x6E
 #END
@@ -40,28 +34,38 @@
     iKeyboard0_11   // offset 0x54200
     iKeyboard0_12   // offset 0x5C000
     iStatictext0    // offset 0x60000
-    iStatictext1    // offset 0x64600
-    iStatictext2    // offset 0x65A00
-    iStatictext3    // offset 0x67000
-    iStatictext4    // offset 0x68600
+    iStatictext5    // offset 0x60C00
+    iStatictext6    // offset 0x62800
+    iUserbutton0    // offset 0x63000
+    iUserbutton1    // offset 0x71E00
+    iUserbutton2    // offset 0x7BC00
 #END
 
+#constant  Strings3Size     0
+#constant  Strings3StartH   0
+#constant  Strings3StartL   0
+#constant  Strings4Size     0
+#constant  Strings4StartH   0
+#constant  Strings4StartL   0
+#constant  Strings5Size     0
+#constant  Strings5StartH   0
+#constant  Strings5StartL   0
+#constant  Strings6Size     0
+#constant  Strings6StartH   0
+#constant  Strings6StartL   0
+#constant  Strings7Size     0
+#constant  Strings7StartH   0
+#constant  Strings7StartL   0
 #constant  Strings0StartH   0x0
 #constant  Strings0StartL   0x0
+#constant  Strings8StartH   0x0
+#constant  Strings8StartL   0x200
+#constant  Strings9StartH   0x0
+#constant  Strings9StartL   0x400
 #constant  Strings1StartH   0x0
-#constant  Strings1StartL   0x200
-#constant  Strings3StartH   0x0
-#constant  Strings3StartL   0x400
+#constant  Strings1StartL   0x600
 #constant  Strings2StartH   0x0
-#constant  Strings2StartL   0x600
-#constant  Strings4StartH   0x0
-#constant  Strings4StartL   0x800
-#constant  Strings5StartH   0x0
-#constant  Strings5StartL   0xA00
-#constant  Strings6StartH   0x0
-#constant  Strings6StartL   0xC00
-#constant  Strings7StartH   0x0
-#constant  Strings7StartL   0xE00
+#constant  Strings2StartL   0x800
 #IFNOT EXISTS NOGLOBALS
 var disk, hndl ;
 var oKeyboard0[12] := [-1, 0, 0, 0, 0, 255, 255, 255, 255, 255, 13, 0] ;
