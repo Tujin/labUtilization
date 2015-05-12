@@ -2834,7 +2834,7 @@ file C:\Program Files (x86)\4D Labs\4D Workshop 4 IDE\include\PicasoFunctions.fn
 002828  000111        
 002829  000112        
 002830  000002        
-002831  000003  // generated 5/11/2015 3:57:33 PM
+002831  000003  // generated 5/11/2015 5:40:27 PM
 002832  000004        
 002833  000005  #MODE RUNFLASH
 002834  000006        
@@ -2873,7 +2873,7 @@ file C:\Users\tlulery\Documents\git\labUsageTracker\labUsageTracker.4DWork\labUs
 
 002862  000012  #inherit "labUsageTrackerConst.inc"
 002863  000012  #inherit "labUsageTrackerConst.inc"
-002864  000001  // File generated 5/11/2015 3:57:31 PM
+002864  000001  // File generated 5/11/2015 5:40:24 PM
 002865  000002  // Warning! This is a generated file, any manual changes will be
 002866  000003  // lost during the next generation.
 002867  000004        
@@ -3912,8 +3912,8 @@ file C:\Program Files (x86)\4D Labs\4D Workshop 4 IDE\include\CLPrintStrings.inc
 003898  000568      hFonts[0] := file_LoadImageControl("LABUSA~1.da1", "LABUSA~1.gc1", 1)  ;
 003899  000569      hFonts[1] := FONT3 ;
 003900  000570      hFonts[2] := FONT3 ;
-003901  000571      hFonts[8] := FONT3 ;
-003902  000572      hFonts[9] := file_LoadImageControl("LABUSA~1.da2", "LABUSA~1.gc2", 1)  ;
+003901  000571      hFonts[9] := file_LoadImageControl("LABUSA~1.da3", "LABUSA~1.gc3", 1)  ;
+003902  000572      hFonts[8] := hFonts[0] ;
 003903  000573      dKeyboard[0] := oKeyboard0 ;
 003904  000574  // Start P4.inc
 003905  000575      hstrings := file_Open("LABUSA~1.txf", 'r') ; // Open handle to access uSD strings, uncomment if required
@@ -4491,7 +4491,7 @@ flash_SIG                           -154  0xffffff66 (PmmC func) args[0] r=1  (n
 FLORALWHITE                        65502  0x0000ffde (const dword)  (not used)
 FONT1                                  0  0x00000000 (const dword)  (not used)
 FONT2                                  1  0x00000001 (const dword)  (not used)
-FONT3                                  2  0x00000002 (const dword)  (usage 9)
+FONT3                                  2  0x00000002 (const dword)  (usage 6)
 FONT_ID                                2  0x00000002 (const dword)  (not used)
 FONT_SIZE                              2  0x00000002 (const dword)  (not used)
 FORESTGREEN                         9284  0x00002444 (const dword)  (not used)
@@ -4633,7 +4633,7 @@ HEX4Z                               1040  0x00000410 (const dword)  (not used)
 HEX4ZB                              9232  0x00002410 (const dword)  (not used)
 HEXZ                                1040  0x00000410 (const dword)  (not used)
 HEXZB                               9232  0x00002410 (const dword)  (not used)
-hFonts                                28  0x0000001c (mem) word[10] (global)  (usage 18)
+hFonts                                28  0x0000001c (mem) word[10] (global)  (usage 21)
 HI                                     1  0x00000001 (const dword)  (not used)
 HIbyte                              -214  0xffffff2a (PmmC func) args[1] r=1  (not used)
 HIDE                                   2  0x00000002 (const dword)  (not used)

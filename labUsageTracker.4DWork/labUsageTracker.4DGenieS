@@ -1,6 +1,6 @@
 #platform "uLCD-43PT"
 
-// generated 5/11/2015 3:57:33 PM
+// generated 5/11/2015 5:40:27 PM
 
 #MODE RUNFLASH
 
@@ -568,8 +568,8 @@ func main()
     hFonts[0] := file_LoadImageControl("LABUSA~1.da1", "LABUSA~1.gc1", 1)  ;
     hFonts[1] := FONT3 ;
     hFonts[2] := FONT3 ;
-    hFonts[8] := FONT3 ;
-    hFonts[9] := file_LoadImageControl("LABUSA~1.da2", "LABUSA~1.gc2", 1)  ;
+    hFonts[9] := file_LoadImageControl("LABUSA~1.da3", "LABUSA~1.gc3", 1)  ;
+    hFonts[8] := hFonts[0] ;
     dKeyboard[0] := oKeyboard0 ;
 // Start P4.inc
     hstrings := file_Open("LABUSA~1.txf", 'r') ; // Open handle to access uSD strings, uncomment if required
