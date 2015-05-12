@@ -115,7 +115,7 @@ void keyPress(int key)
   if(key == BACKSPACE && *bufIndex > 0) // keystroke received is a backspace, and we have digits to delete
   {
     buf[*bufIndex] = 0;
-    *bufIndex--;
+    (*bufIndex)--;
   }
   else if (key == CANCEL) // pressed cancel, set index to 0 to erase their entire entry
     *bufIndex = 0;
@@ -161,6 +161,8 @@ void myGenieEventHandler (void)
    }
    else if(Event.reportObject.index == BUTTON_TOOL)
    {
+     selectedButton = SELECTED_NONE;
+     selectedChange = true;
      selectedTool++;
      if(selectedTool == TOOL_STRINGS_ELEMENTS) //went past last object
        selectedTool = 0;
