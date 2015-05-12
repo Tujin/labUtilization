@@ -5,9 +5,9 @@
 #define CANCEL 107
 #define SUBMIT 13
 
-//definitions for buffer sizes
-#define WWID_SIZE 8
-#define DUR_SIZE 2
+//definitions for buffer sizes (including space for null terminator)
+#define WWID_SIZE 9
+#define DUR_SIZE 3
 
 //definitions for screen objects
 #define STRING_WWID 0
@@ -29,8 +29,8 @@
 
 Genie genie;
 
-char wwidBuf[WWID_SIZE + 1]; // declare a char array to hold our WWID, add one for null terminator
-char durBuf[DUR_SIZE + 1]; // declare a char array to hold keystrokes for duration
+char wwidBuf[WWID_SIZE]; // declare a char array to hold our WWID
+char durBuf[DUR_SIZE]; // declare a char array to hold keystrokes for duration
 
 int wwidIndex;
 int durIndex;
@@ -53,11 +53,13 @@ void setup()
   
   
   genie.WriteObject (GENIE_OBJ_FORM, 0, 0); // Switch to form 0
-  selectedButton = SELECTED_DUR; // start with WWID selected
+  selectedButton = SELECTED_WWID; // start with WWID selected
   selectedTool = 0; // start with first string selected in tool list
   selectedChange = true;
   wwidBuf[0] = 0; // set first character as null terminator
   durBuf[0] = 0; // set first character as null terminator
+  wwidIndex = 0; // initialize to 0
+  durIndex = 0; // initialize to 0
   drawScreen(); // draw screen for the first time
   genie.WriteObject(GENIE_OBJ_STRINGS,0,0); // display the box for strings object, without this line the box doesn't appear until you begin typing
   Serial.println("Setup finished.");
@@ -85,33 +87,46 @@ void drawScreen()
   genie.WriteStr(STRING_WWID,wwidBuf); // write wwid buffer to strings object
   genie.WriteStr(STRING_DUR,durBuf); // write duration bufer to strings object 
 }
-/*void keyPress(int key)
+void keyPress(int key)
 {
-  Serial.print("Keypress received: ");
-  Serial.println(key);
-  if(key == BACKSPACE && wwidIndex > 0) // keystroke received is a backspace, and we have digits to delete
+  if(key == SUBMIT)
+    {
+      //doSubmit();
+    }
+  char * buf;
+  int bufSize;
+  int * bufIndex;
+  if(selectedButton == SELECTED_WWID)
   {
-    wwid[wwidIndex] = 0; //Set current location in char array to 0 (null terminator)
-    wwidIndex--; // back up index
+    buf = wwidBuf; // buffer now points to wwidBuf in memory
+    bufSize = WWID_SIZE; // set bufSize to prevent overflows
+    bufIndex = &wwidIndex; // bufIndex now points to wwidIndex
+  }
+  else if(selectedButton == SELECTED_DUR)
+  {
+    buf = durBuf; // buffer now points to durBuf in memory
+    bufSize = DUR_SIZE; // set bufSize to prevent overflows
+    bufIndex = &durIndex; // bufIndex now points to durIndex
+  }
+  else if(selectedButton == SELECTED_NONE) // no field selected, we only care about a submit press
+  {
+    return;
+  }
+  if(key == BACKSPACE && *bufIndex > 0) // keystroke received is a backspace, and we have digits to delete
+  {
+    buf[*bufIndex] = 0;
+    *bufIndex--;
   }
   else if (key == CANCEL) // pressed cancel, set index to 0 to erase their entire entry
-    wwidIndex = 0;
-  else if(key == SUBMIT && wwidIndex == WWID_SIZE) // pressed submit,wwid is filled out, move to form 1
-  {
-   genie.WriteObject (GENIE_OBJ_FORM, 1, 0); // Switch to form 1
-   wwid[wwidIndex] = 0; // create null terminator
-   genie.WriteStr(1,wwid); // write string to strings objecton form 1
-   return;
-  }
+    *bufIndex = 0;
   int digit = key - '0'; // get actual numerical value of keypress
-  if(digit >= 0 && digit <= 9 && wwidIndex < 8) // keypress is within the acceptable range and we have room in our char array for it
+  if(digit >= 0 && digit <= 9 && *bufIndex < bufSize - 1) // keypress is within the acceptable range and we have room in our char array for it (subtract 1 because the last character can only be a null terminator
   {
-    wwid[wwidIndex] = key; // set curret location to keypress
-    wwidIndex++; // move forward
+    buf[*bufIndex] = key; // set curret location to keypress
+    (*bufIndex)++; // move forward
   }
-  wwid[wwidIndex] = 0; // set the value at wwidIndex to be our null terminator
-  genie.WriteStr(0,wwid); // write our char array to strings object 0
-}*/
+  buf[*bufIndex] = 0; // set the value at end of array to be our null terminator
+}
 void myGenieEventHandler (void)
 {
   int keyboardValue; // int to store keypress
@@ -129,7 +144,7 @@ void myGenieEventHandler (void)
     if (Event.reportObject.index == 0)	// If from Keyboard0
     {
       keyboardValue = genie.GetEventData(&Event); // Get data from Keyboard0
-      //keyPress(keyboardValue); // pass data to the keyPress function
+      keyPress(keyboardValue); // pass data to the keyPress function
     }
   }
   else if(Event.reportObject.object == GENIE_OBJ_USERBUTTON)
